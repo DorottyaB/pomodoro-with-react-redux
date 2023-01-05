@@ -1,0 +1,32 @@
+.navigation-container {
+  background-color: #151932;
+  display: flex;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.16) 5px 6px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.navigation-container label {
+  color: #5f6170;
+  font-weight: 700;
+  background-color: transparent;
+  padding: 18px 24px;
+  border: none;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.navigation-container label:hover {
+  background-color: #222643;
+}
+
+.navigation-container label:active,
+input[type='radio'][name='timer']:checked + label {
+  background-color: #f87070;
+  color: #151932;
+}

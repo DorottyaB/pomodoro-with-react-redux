@@ -1,0 +1,17 @@
+.App {
+  font-family: 'Raleway', sans-serif;
+  background-color: #1e2140;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+h1 {
+  color: #d6dffc;
+}
