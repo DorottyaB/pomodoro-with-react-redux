@@ -1,5 +1,22 @@
-// font-family: 'Lobster Two', cursive;
+import { createSlice } from '@reduxjs/toolkit';
 
-// font-family: 'Raleway', sans-serif;
+const initialState = {
+  color: '#f6706e',
+  font: 'Raleway',
+};
 
-// font-family: 'Roboto Slab', serif;
+const themeSlice = createSlice({
+  name: 'theme',
+  initialState,
+  reducers: {
+    selectColor(state, action) {
+      state.color = action.payload;
+    },
+    selectFont(state, action) {
+      state.font = action.payload;
+    },
+  },
+});
+
+export const { selectColor, selectFont } = themeSlice.actions;
+export default themeSlice.reducer;

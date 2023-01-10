@@ -1,11 +1,22 @@
 .App {
-  font-family: 'Raleway', sans-serif;
   background-color: #1e2140;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+  position: relative;
+  padding: 30px 0;
+}
+
+.App.no-scroll {
   height: 100vh;
+  overflow-y: hidden;
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
 }
 
 input[type='radio'] {
@@ -14,4 +25,5 @@ input[type='radio'] {
 
 h1 {
   color: #d6dffc;
+  font-size: 28px;
 }

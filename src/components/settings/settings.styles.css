@@ -1,0 +1,13 @@
+.settings-btn {
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.settings-btn svg {
+  transition: transform 1.5s;
+}
+
+.settings-btn:hover svg {
+  filter: brightness(120%);
+  transform: rotate(135deg);
+}

@@ -4,11 +4,12 @@
   gap: 5px;
   padding: 8px;
   border-radius: 100px;
-  box-shadow: rgba(0, 0, 0, 0.16) 5px 6px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px 0px, rgba(0, 0, 0, 0.03) 0px 2px 8px 0px;
 }
 
 .navigation-container label {
-  color: #5f6170;
+  color: #7b7d89;
+  font-size: 14px;
   font-weight: 700;
   background-color: transparent;
   padding: 18px 24px;
@@ -27,6 +28,24 @@
 
 .navigation-container label:active,
 input[type='radio'][name='timer']:checked + label {
-  background-color: #f87070;
   color: #151932;
+}
+
+.navigation-container label.color-1:active,
+input[type='radio'][name='timer']:checked + label.color-1 {
+  background-color: #f87070;
+}
+.navigation-container label.color-2:active,
+input[type='radio'][name='timer']:checked + label.color-2 {
+  background-color: #48c3c3;
+}
+.navigation-container label.color-3:active,
+input[type='radio'][name='timer']:checked + label.color-3 {
+  background-color: #d981f8;
+}
+
+@media screen and (max-width: 455px) {
+  .navigation-container label {
+    padding: 14px 18px;
+  }
 }

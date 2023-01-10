@@ -1,6 +1,11 @@
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../features/modal/modalSlice';
+import './settings.styles.css';
+
 export function Settings() {
+  const dispatch = useDispatch();
   return (
-    <div style={{ cursor: 'pointer' }} title='Settings'>
+    <div onClick={() => dispatch(openModal())} className='settings-btn' aria-label='Settings'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='28'
