@@ -67,4 +67,12 @@ input[type='number']:focus-visible {
     align-items: center;
     justify-content: space-between;
   }
+
+  .input-box {
+    text-align: left;
+  }
+
+  .number-input-container p {
+    font-size: 13px;
+  }
 }

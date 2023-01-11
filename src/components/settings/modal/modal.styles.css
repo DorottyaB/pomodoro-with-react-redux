@@ -132,7 +132,17 @@ input[type='radio'][name='font']:checked + label {
 
 @media screen and (max-width: 455px) {
   .modal-container {
-    width: 80%;
+    width: 87%;
+  }
+
+  .modal-header {
+    padding: 20px;
+    padding-bottom: 15px;
+  }
+
+  section {
+    text-align: center;
+    margin: 0 20px;
   }
 
   section.flex-container {
@@ -141,6 +151,7 @@ input[type='radio'][name='font']:checked + label {
 
   section .flex-container.number-inputs {
     flex-direction: column;
+    align-items: stretch;
     gap: 0;
   }
 }

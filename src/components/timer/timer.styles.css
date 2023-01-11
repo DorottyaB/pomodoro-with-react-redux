@@ -48,7 +48,7 @@
 }
 
 .inner h2 {
-  font-size: 90px;
+  font-size: 102px;
   color: #d6dffd;
   font-weight: 700;
   user-select: none;
@@ -80,26 +80,12 @@
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  /* background-color: #f6706e; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* change gradient's first degree value */
-.progress.right {
-  /* first value: from 0 to 270deg */
-  background-image: linear-gradient(126deg, transparent 50%, #151932 50%),
-    linear-gradient(90deg, #151932 50%, transparent 50%);
-}
-.progress.left {
-  /* background-image: linear-gradient(306deg, transparent 50%, #151932 50%),
-    linear-gradient(270deg, #151932 50%, transparent 50%); */
-  /* first lin-gr final value: (368deg, 115%, 155%) */
-  /* starting value: (296deg, 4%, 4%) */
-  background-image: linear-gradient(296deg, transparent 4%, #151932 4%),
-    linear-gradient(270deg, #151932 0%, transparent 0%);
-}
+
 .circle.left {
   background-size: 50%;
   background-repeat: no-repeat;
@@ -107,23 +93,23 @@
 
 @media screen and (max-width: 455px) {
   .timer-container {
-    width: 342px;
-    height: 342px;
+    width: 320px;
+    height: 320px;
   }
 
   .outer {
-    width: 285px;
-    height: 285px;
+    width: 270px;
+    height: 270px;
   }
 
   .circle {
-    width: 310px;
-    height: 310px;
+    width: 288px;
+    height: 288px;
   }
 
   .inner {
-    width: 284px;
-    height: 284px;
+    width: 265px;
+    height: 265px;
   }
 
   .inner h2 {
