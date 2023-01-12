@@ -8,9 +8,3 @@ export const settingsMiddleware = store => next => action => {
   }
   return next(action);
 };
-
-export const reHydrateStore = () => {
-  if (localStorage.getItem('settings') !== null) {
-    return JSON.parse(localStorage.getItem('settings'));
-  }
-};
