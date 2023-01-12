@@ -36,7 +36,7 @@ const timerSlice = createSlice({
     decrement(state, action) {
       const id = action.payload;
       const item = state.modes.find(item => item.id === id);
-      if (item.value === 0) {
+      if (item.value === 1) {
         return;
       }
       item.value = item.value - 1;

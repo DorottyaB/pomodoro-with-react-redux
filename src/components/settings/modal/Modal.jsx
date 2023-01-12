@@ -45,8 +45,8 @@ export function Modal() {
   };
 
   const [selectedTheme, setSelectedTheme] = useState({
-    color: theme.colors[0].value,
-    font: theme.fonts[0].name,
+    color: themeIinitialState.color,
+    font: themeIinitialState.font,
   });
 
   function handleChange(e) {
@@ -65,15 +65,6 @@ export function Modal() {
     dispatch(setSeconds(selectedTimer));
     dispatch(closeModal());
   }
-
-  useEffect(() => {
-    setSelectedTheme(() => {
-      return {
-        color: themeIinitialState.color,
-        font: themeIinitialState.font,
-      };
-    });
-  }, []);
 
   return (
     <div className='overlay'>

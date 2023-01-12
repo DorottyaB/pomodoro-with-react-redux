@@ -20,23 +20,25 @@ export function Timer() {
     const audio = document.querySelector('audio');
     audio.volume = 0.3;
     const rightSideSteps = 180 / halfTime;
-    const leftSideSteps = [146 / halfTime, 96 / halfTime];
+    const leftSideSteps = [143 / halfTime, 96 / halfTime];
 
     countdown = setInterval(() => {
+      sec -= 1;
       displayTimeLeft(sec);
       if (sec >= halfTime) {
         setRightValue(prevValue => prevValue + rightSideSteps);
       }
-      if (sec <= halfTime) {
+      if (sec < halfTime) {
         setLeftValue(prevValue => {
           return [prevValue[0] + leftSideSteps[0], prevValue[1] + leftSideSteps[1]];
         });
       }
-      sec -= 1;
-      if (sec < 0) {
+      if (sec === 0) {
         audio.play();
         clearInterval(countdown);
         setIsCounting(prevState => !prevState);
+        const button = document.querySelector('.pause-play-btn');
+        button.hidden = true;
         return;
       }
       setTimeLeft(() => sec);
@@ -61,6 +63,8 @@ export function Timer() {
     setHalfTime(() => calcHalfTime());
     setRightValue(-90);
     setLeftValue([296, 4]);
+    const button = document.querySelector('.pause-play-btn');
+    button.hidden = false;
   }
 
   const handleClick = () => {
