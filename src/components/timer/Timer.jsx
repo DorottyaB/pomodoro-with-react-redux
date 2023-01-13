@@ -11,7 +11,7 @@ export function Timer() {
   const [halfTime, setHalfTime] = useState(() => calcHalfTime());
   const [rightValue, setRightValue] = useState(-90);
   const [leftValue, setLeftValue] = useState([296, 4]);
-
+  // Dynamic backgroundImage for circular progress bar
   const progressRightBg = `linear-gradient(-90deg, transparent 50%, #151932 50%), linear-gradient(${rightValue}deg, #151932 50%, transparent 50%)`;
   const progressLeftBg = `linear-gradient(${leftValue[0]}deg, transparent ${leftValue[1]}%, #151932 ${leftValue[1]}%), linear-gradient(265deg, #151932 0%, transparent 0%)`;
 
@@ -19,21 +19,28 @@ export function Timer() {
   function timer(sec) {
     const audio = document.querySelector('audio');
     audio.volume = 0.3;
-    const rightSideSteps = 180 / halfTime;
-    const leftSideSteps = [143 / halfTime, 96 / halfTime];
+    // get countdown's end time in milliseconds
+    const now = Date.now();
+    const then = now + sec * 1000;
+    // get speed for each half of the circular progress bar
+    const rightSideSteps = 180 / halfTime; // final value 90 = -90 + 180
+    const leftSideSteps = [143 / halfTime, 96 / halfTime]; // final values 439 = 296 + 143 and 100 = 4 + 96
 
     countdown = setInterval(() => {
-      sec -= 1;
-      displayTimeLeft(sec);
-      if (sec >= halfTime) {
+      // get remaining time in seconds
+      const secondsLeft = Math.round((then - Date.now()) / 1000);
+      displayTimeLeft(secondsLeft);
+      // update progress bar
+      if (secondsLeft >= halfTime) {
         setRightValue(prevValue => prevValue + rightSideSteps);
       }
-      if (sec < halfTime) {
+      if (secondsLeft < halfTime) {
         setLeftValue(prevValue => {
           return [prevValue[0] + leftSideSteps[0], prevValue[1] + leftSideSteps[1]];
         });
       }
-      if (sec === 0) {
+      // countdown over
+      if (secondsLeft === 0) {
         audio.play();
         clearInterval(countdown);
         setIsCounting(prevState => !prevState);
@@ -41,7 +48,7 @@ export function Timer() {
         button.hidden = true;
         return;
       }
-      setTimeLeft(() => sec);
+      setTimeLeft(() => secondsLeft);
     }, 1000);
   }
 
