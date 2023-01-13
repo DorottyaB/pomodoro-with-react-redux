@@ -25,18 +25,16 @@ export function Timer() {
     // get speed for each half of the circular progress bar
     const rightSideSteps = 180 / halfTime; // final value 90 = -90 + 180
     const leftSideSteps = [143 / halfTime, 96 / halfTime]; // final values 439 = 296 + 143 and 100 = 4 + 96
-    console.log('half time: ', halfTime);
+
     countdown = setInterval(() => {
       // get remaining time in seconds
       const secondsLeft = Math.round((then - Date.now()) / 1000);
       displayTimeLeft(secondsLeft);
-      console.log('seconds left: ', secondsLeft);
       // update progress bar
       if (secondsLeft >= halfTime) {
         setRightValue(prevValue => prevValue + rightSideSteps);
       }
       if (secondsLeft < halfTime) {
-        console.log(leftSideSteps);
         setLeftValue(prevValue => {
           return [prevValue[0] + leftSideSteps[0], prevValue[1] + leftSideSteps[1]];
         });
