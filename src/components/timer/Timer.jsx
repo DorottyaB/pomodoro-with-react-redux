@@ -35,6 +35,7 @@ export function Timer() {
         setRightValue(prevValue => prevValue + rightSideSteps);
       }
       if (secondsLeft < halfTime) {
+        setRightValue(90);
         setLeftValue(prevValue => {
           return [prevValue[0] + leftSideSteps[0], prevValue[1] + leftSideSteps[1]];
         });
