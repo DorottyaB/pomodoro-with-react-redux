@@ -24,7 +24,7 @@ export function Timer() {
     const then = now + sec * 1000;
     // get speed for each half of the circular progress bar
     const rightSideSteps = 180 / halfTime; // final value 90 = -90 + 180
-    const leftSideSteps = [143 / halfTime, 97 / halfTime]; // final values 439 = 296 + 143 and 101 = 4 + 97
+    const leftSideSteps = [143 / halfTime, 96.3 / halfTime]; // final values 439 = 296 + 143 and 100.3 = 4 + 96.3
 
     countdown = setInterval(() => {
       // get remaining time in seconds
