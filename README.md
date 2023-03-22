@@ -22,7 +22,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/DorottyaB/pomodoro-with-react-redux)
-- Live Site URL: [on Vercel](https://pomodoro-dorottyab.vercel.app/)
+- Live Site URL: [pomodoro-dorottyab.vercel.app/](https://pomodoro-dorottyab.vercel.app/)
 
 ## Author
 
